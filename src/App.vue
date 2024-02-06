@@ -2,26 +2,39 @@
   <div id="app">
     <div class="home">
       <div class="vue-logo-back">
-        <div class="centeralign bg-white" style="height:30px">
+        <div class="centeralign bg-white" style="height: 30px">
           <span class="float-left">
             <a href="/lives">
-              <img src="./assets/logo-unibet.png" class="header-logo" width="50px" height="50px">
+              <img src="./assets/logo-unibet.png" class="header-logo" width="50px" height="50px" />
             </a>
           </span>
           <span class="text-dark float-right mr-3">
-            <div class="text-secondary mr-3">Login : <span class="font-weight-bold">{{ username }}</span></div>
-            <div class="text-secondary mr-3 ">Balance : <span class="font-weight-bold">{{ balance }} € </span></div>
+            <div class="text-secondary mr-3">
+              Login : <span class="font-weight-bold">{{ username }}</span>
+            </div>
+            <div class="text-secondary mr-3">
+              Balance : <span class="font-weight-bold">{{ balance }} € </span>
+            </div>
           </span>
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <router-link tag="a" class="nav-link" to="/lives">En direct</router-link>
+                    <router-link tag="a" class="nav-link" to="/lives">
+                      En direct
+                    </router-link>
                   </li>
                 </ul>
               </div>
@@ -41,7 +54,7 @@ import axios from '@/services/axios.js'
 export default {
   name: 'App',
   created() {
-    this.fetchBalance();
+    this.fetchBalance()
     this.balanceInterval = setInterval(this.fetchBalance, 5000)
   },
   data() {
@@ -53,25 +66,27 @@ export default {
   },
   methods: {
     fetchBalance() {
-      axios.get('/user.json').then(res => {
-        this.username = res.data.pseudo;
-        this.balance = res.data.balance;
-      });
-    }
+      axios.get('/user.json').then((res) => {
+        this.username = res.data.pseudo
+        this.balance = res.data.balance
+      })
+    },
   },
   beforeDestroy() {
-    clearInterval(this.balanceInterval);
-  }
+    clearInterval(this.balanceInterval)
+  },
 }
 </script>
 
 <style>
 #app {
+  height: 100vh;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #fafafa;
+  background-color: #2c3e50;
 }
 
 #nav {
@@ -80,7 +95,7 @@ export default {
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  /* color: #2c3e50; */
 }
 
 #nav a.router-link-exact-active {

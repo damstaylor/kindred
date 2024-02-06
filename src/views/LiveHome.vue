@@ -2,22 +2,41 @@
   <div>
     <div v-if="lives.length > 0" class="card mt-5">
       <div class="card-header bg-dark text-white pulse">
-        <h4>Live(s) en cours <span class="badge bg-danger">{{ lives.length }}</span></h4>
+        <h4>
+          Live(s) en cours
+          <span class="badge bg-danger">{{ lives.length }}</span>
+        </h4>
       </div>
       <div class="card-body">
         <div class="card-text">
-        <div class="card centeralign addmargin" style="width: 18rem;" v-for="live in lives" :key="live.id">
-          <div class="card-body" v-on:click="goToLive(live.id)">
-            <h4 class="card-title font-weight-bold text-justify">{{ live.name }}</h4>
-            <ul class="list-group text-justify text-center">
-              <li class="list-group-item">{{ live.nbMarkets }} marché(s) ouvert(s)</li>
-              <li class="list-group-item">{{ live.nbSelections }} selection(s) ouverte(s)</li>
-              <li class="list-group-item">{{ live.nbBets }} pari(s) enregistré(s)</li>
-            </ul>
-            <a class="btn btn-primary mt-3" v-on:click="goToLive(live.id)"><span style="color:#212121">Parier sur
-                {{ live.name }}</span></a>
+          <div
+            class="card centeralign addmargin"
+            style="width: 18rem"
+            v-for="live in lives"
+            :key="live.id"
+          >
+            <div class="card-body" @click="goToLive(live.id)">
+              <h4 class="card-title font-weight-bold text-justify">
+                {{ live.name }}
+              </h4>
+              <ul class="list-group text-justify text-center">
+                <li class="list-group-item">
+                  {{ live.nbMarkets }} marché(s) ouvert(s)
+                </li>
+                <li class="list-group-item">
+                  {{ live.nbSelections }} selection(s) ouverte(s)
+                </li>
+                <li class="list-group-item">
+                  {{ live.nbBets }} pari(s) enregistré(s)
+                </li>
+              </ul>
+              <a class="btn btn-primary mt-3" @click="goToLive(live.id)">
+                <span style="color: #212121">
+                  Parier sur {{ live.name }}
+                </span>
+              </a>
+            </div>
           </div>
-        </div>
         </div>
       </div>
     </div>
@@ -38,16 +57,16 @@ export default {
   data() {
     return {
       //TODO: fetch data using axios from local json (in directory public/json/events.json)
-      lives: []
+      lives: [],
     }
   },
   components: {
   },
   methods: {
     goToLive: function (id) {
-      this.$router.push(`/livedetails/${id}`);
-    }
-  }
+      this.$router.push(`/livedetails/${id}`)
+    },
+  },
 }
 </script>
 

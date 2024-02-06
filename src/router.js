@@ -5,22 +5,22 @@ import LiveDetails from './views/LiveDetails.vue'
 
 Vue.use(Router)
 
-const router =  new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
-      redirect: '/lives'
+      redirect: '/lives',
     },
     {
       path: '/lives',
       name: 'live',
-      component: LiveHome
+      component: LiveHome,
     },
     {
       path: '/livedetails/:id',
       name: 'livedetails',
-      component: LiveDetails
-    }
-  ]
+      component: LiveDetails,
+    },
+  ],
 })
 export default router

@@ -2,7 +2,7 @@
   {
     "id": 3,
     "name": "Unibet IT gagne",
-    "currentOdd": 20.70,
+    "currentOdd": 20.7,
     "state": "OPENED",
     "result": null,
     "market": {
@@ -18,7 +18,7 @@
   {
     "id": 4,
     "name": "Real madrid gagne",
-    "currentOdd": 1.20,
+    "currentOdd": 1.2,
     "state": "OPENED",
     "result": null,
     "market": {
@@ -34,7 +34,7 @@
   {
     "id": 5,
     "name": "Match Nul",
-    "currentOdd": 4.30,
+    "currentOdd": 4.3,
     "state": "OPENED",
     "result": null,
     "market": {
@@ -50,7 +50,7 @@
   {
     "id": 7,
     "name": "Sabri",
-    "currentOdd": 1.70,
+    "currentOdd": 1.7,
     "state": "OPENED",
     "result": null,
     "market": {
@@ -66,7 +66,7 @@
   {
     "id": 8,
     "name": "Enzo",
-    "currentOdd": 1.60,
+    "currentOdd": 1.6,
     "state": "OPENED",
     "result": null,
     "market": {
@@ -82,7 +82,7 @@
   {
     "id": 9,
     "name": "Eric",
-    "currentOdd": 1.40,
+    "currentOdd": 1.4,
     "state": "OPENED",
     "result": null,
     "market": {
@@ -98,7 +98,7 @@
   {
     "id": 10,
     "name": "Ons",
-    "currentOdd": 2.70,
+    "currentOdd": 2.7,
     "state": "OPENED",
     "result": null,
     "market": {
@@ -114,7 +114,7 @@
   {
     "id": 11,
     "name": "Ki cheuk",
-    "currentOdd": 24.90,
+    "currentOdd": 24.9,
     "state": "OPENED",
     "result": null,
     "market": {
@@ -130,7 +130,7 @@
   {
     "id": 12,
     "name": "K. Benzema",
-    "currentOdd": 1.50,
+    "currentOdd": 1.5,
     "state": "OPENED",
     "result": null,
     "market": {
@@ -146,7 +146,7 @@
   {
     "id": 13,
     "name": "E. Hazard",
-    "currentOdd": 3.20,
+    "currentOdd": 3.2,
     "state": "OPENED",
     "result": null,
     "market": {
@@ -162,7 +162,7 @@
   {
     "id": 14,
     "name": "Isco",
-    "currentOdd": 6.40,
+    "currentOdd": 6.4,
     "state": "OPENED",
     "result": null,
     "market": {
@@ -178,7 +178,7 @@
   {
     "id": 16,
     "name": "Guillaume",
-    "currentOdd": 30.10,
+    "currentOdd": 30.1,
     "state": "OPENED",
     "result": null,
     "market": {
@@ -194,7 +194,7 @@
   {
     "id": 17,
     "name": "Maxime",
-    "currentOdd": 40.10,
+    "currentOdd": 40.1,
     "state": "OPENED",
     "result": null,
     "market": {
@@ -210,7 +210,7 @@
   {
     "id": 18,
     "name": "Thomas",
-    "currentOdd": 49.90,
+    "currentOdd": 49.9,
     "state": "OPENED",
     "result": null,
     "market": {
@@ -226,7 +226,7 @@
   {
     "id": 19,
     "name": "Enzo",
-    "currentOdd": 60.00,
+    "currentOdd": 60.0,
     "state": "OPENED",
     "result": null,
     "market": {
@@ -242,7 +242,7 @@
   {
     "id": 20,
     "name": "Murat",
-    "currentOdd": 70.00,
+    "currentOdd": 70.0,
     "state": "OPENED",
     "result": null,
     "market": {
@@ -258,7 +258,7 @@
   {
     "id": 21,
     "name": "Henri",
-    "currentOdd": 80.00,
+    "currentOdd": 80.0,
     "state": "OPENED",
     "result": null,
     "market": {
@@ -274,7 +274,7 @@
   {
     "id": 22,
     "name": "Ons",
-    "currentOdd": 90.00,
+    "currentOdd": 90.0,
     "state": "OPENED",
     "result": null,
     "market": {
@@ -290,7 +290,7 @@
   {
     "id": 23,
     "name": "Sabri",
-    "currentOdd": 100.00,
+    "currentOdd": 100.0,
     "state": "OPENED",
     "result": null,
     "market": {
@@ -306,7 +306,7 @@
   {
     "id": 24,
     "name": "Isma",
-    "currentOdd": 110.00,
+    "currentOdd": 110.0,
     "state": "OPENED",
     "result": null,
     "market": {

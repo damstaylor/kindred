@@ -31,60 +31,48 @@
               </div>
             </div>
           </div>
-          <br>
+          <br />
           <h4>Buteur</h4>
           <div class="row mt-1">
             <div class="card bg-primary text-white h-100 col">
-              <div class="card-body">
-                D. Neymar : 1.3
-              </div>
+              <div class="card-body">D. Neymar : 1.3</div>
             </div>
           </div>
           <div class="row mt-1">
             <div class="card bg-primary text-white h-100 col">
-              <div class="card-body">
-                K. Mbappe : 1.6
-              </div>
+              <div class="card-body">K. Mbappe : 1.6</div>
             </div>
           </div>
           <div class="row mt-1">
             <div class="card bg-primary text-white h-100 col">
-              <div class="card-body">
-                L. Messi : 1.3
-              </div>
+              <div class="card-body">L. Messi : 1.3</div>
             </div>
           </div>
           <div class="row mt-1">
             <div class="card bg-primary text-white h-100 col">
-              <div class="card-body">
-                K. Benzema : 1.5
-              </div>
+              <div class="card-body">K. Benzema : 1.5</div>
             </div>
           </div>
           <div class="row mt-1">
             <div class="card bg-primary text-white h-100 col">
-              <div class="card-body">
-                E. Hasard : 2.5
-              </div>
+              <div class="card-body">E. Hasard : 2.5</div>
             </div>
           </div>
           <div class="row mt-1">
             <div class="card bg-primary text-white h-100 col">
-              <div class="card-body">
-                J. Vinicius : 1.8
-              </div>
+              <div class="card-body">J. Vinicius : 1.8</div>
             </div>
           </div>
           <div class="row mt-1">
             <div class="card bg-primary text-white h-100 col">
-              <div class="card-body">
-                M. Icardi : 1.9
-              </div>
+              <div class="card-body">M. Icardi : 1.9</div>
             </div>
           </div>
         </div>
       </div>
-      <router-link to="/lives" class="btn btn-light">Retour aux lives</router-link>
+      <router-link to="/lives" class="btn btn-light">
+        Retour aux lives
+      </router-link>
     </div>
   </div>
 </template>
@@ -96,18 +84,17 @@
 export default {
   name: 'livedetails',
   mounted() {
-
   },
   data() {
     return {
       //TODO: shoud be retrieved from json
       //  axios.get('/selections.json')
-      selections: []
+      selections: [],
     }
   },
   created() {
   },
   methods: {
-  }
+  },
 }
 </script>
