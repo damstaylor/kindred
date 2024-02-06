@@ -33,8 +33,8 @@
     </div>
   </div>
 </template>
-<script>
 
+<script>
 // @ is an alias to /src
 import axios from '@/services/axios.js'
 
@@ -64,6 +64,7 @@ export default {
   }
 }
 </script>
+
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -86,8 +87,6 @@ export default {
   color: #42b983;
 }
 
-
-
 .centeralign {
   display: block;
   margin-left: auto;
@@ -108,5 +107,4 @@ export default {
 .pulse {
   animation: shadow-pulse 1s infinite;
 }
-</style>
 </style>
