@@ -48,11 +48,12 @@
 
 <script>
 // @ is an alias to /src
-// import axios from '@/services/axios.js'
+import axios from '@/services/axios.js'
 
 export default {
   name: 'live',
   mounted() {
+    this.loadJsonData()
   },
   data() {
     return {
@@ -63,8 +64,15 @@ export default {
   components: {
   },
   methods: {
-    goToLive: function (id) {
+    goToLive(id) {
       this.$router.push(`/livedetails/${id}`)
+    },
+    loadJsonData() {
+      axios.get('/lives.json').then((res) => {
+        this.lives = res.data
+      }).catch(error => {
+        console.error('Error while fetching data', error) // eslint-disable-line
+      })
     },
   },
 }
