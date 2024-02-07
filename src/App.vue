@@ -18,15 +18,8 @@
           </span>
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -85,8 +78,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #fafafa;
-  background-color: #2c3e50;
+  color: #2c3e50;
 }
 
 #nav {
@@ -95,7 +87,7 @@ export default {
 
 #nav a {
   font-weight: bold;
-  /* color: #2c3e50; */
+  color: #2c3e50;
 }
 
 #nav a.router-link-exact-active {
