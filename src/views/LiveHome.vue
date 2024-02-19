@@ -16,10 +16,10 @@
             :key="live.id"
           >
             <div class="card-body" @click="goToLive(live.id)">
-              <h4 class="card-title font-weight-bold text-justify">
+              <h4 class="card-title font-weight-bold text-center">
                 {{ live.name }}
               </h4>
-              <ul class="list-group text-justify text-center">
+              <ul class="list-group text-center">
                 <li class="list-group-item">
                   {{ live.nbMarkets }} marché(s) ouvert(s)
                 </li>
