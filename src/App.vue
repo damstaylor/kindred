@@ -5,7 +5,7 @@
         <div class="centeralign bg-white" style="height: 30px">
           <span class="float-left">
             <a href="/lives">
-              <img src="./assets/logo-unibet.png" class="header-logo" width="50px" height="50px" />
+              <img src="./assets/logo-unibet.png" alt="Logo Unibet" class="header-logo" />
             </a>
           </span>
           <span class="text-dark float-right mr-3">
@@ -92,9 +92,9 @@ export default {
   color: #2c3e50;
 }
 
-#nav {
+/*#nav {
   padding: 30px;
-}
+}*/
 
 #nav a {
   font-weight: bold;
@@ -110,7 +110,8 @@ export default {
 }
 
 .header-logo {
-  /*margin-left: -50%;*/
+  width: 50px;
+  aspect-ratio: 1/1;
 }
 
 .centeralign {
