@@ -57,9 +57,9 @@ export default {
   },
   data() {
     return {
-      balanceInterval: undefined,
-      username: undefined,
-      balance: undefined
+      balanceInterval: null,
+      username: '',
+      balance: 0,
     }
   },
   methods: {
