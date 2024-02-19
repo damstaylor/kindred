@@ -6,21 +6,19 @@
     <div class="card-body">
       <div class="card-text">
         <div v-if="getMarkets.length" class="container">
-          <h4> {{ getMarkets[0].name }}</h4>
+          <h4> {{ getMatchResult.name }}</h4>
           <div class="row mt-1">
-            <template v-for="market in getMatchResult">
-              <div
-                class="col"
-                v-for="selection in getSelectionsFromMarketId(market.id)"
-                :key="selection.id"
-              >
-                <div class="card bg-primary text-white h-100">
-                  <div class="card-body">
-                    <p class="card-text">{{ selection.name }} : {{ selection.currentOdd }}</p>
-                  </div>
+            <div
+              class="col"
+              v-for="selection in getSelectionsFromMarketId(getMatchResult.id)"
+              :key="selection.id"
+            >
+              <div class="card bg-primary text-white h-100">
+                <div class="card-body">
+                  <p class="card-text">{{ selection.name }} : {{ selection.currentOdd }}</p>
                 </div>
               </div>
-            </template>
+            </div>
           </div>
           <br/>
 
@@ -82,7 +80,7 @@ export default {
       return uniqueMarkets
     },
     getMatchResult() {
-      return this.getMarkets.filter((market) => market.id === 2)
+      return this.getMarkets.find((market) => market.id === 2) || null
     },
     getOtherMarkets() {
       return this.getMarkets.filter((market) => market.id !== 2)
