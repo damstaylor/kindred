@@ -1,72 +1,42 @@
 <template>
   <div class="card mt-5">
-    <!-- TODO : this need be retrieved dynamically -->
-    <div class="card-header bg-dark text-white pulse">
-      Real Madris vs PSG (en cours)
+    <div v-if="getEvent" class="card-header bg-dark text-white pulse">
+      {{ getEvent.name }} {{ `${selections[0].state === 'OPENED' ? '(en cours)' : '(terminé)'}` }}
     </div>
     <div class="card-body">
       <div class="card-text">
-        <div class="container">
-          <h4>Résultat du match</h4>
-          <div class="row">
-            <div class="col">
-              <div class="card bg-primary text-white h-100">
-                <div class="card-body">
-                  <p class="card-text">Réal : 1.5</p>
+        <div v-if="getMarkets.length" class="container">
+          <h4> {{ getMarkets[0].name }}</h4>
+          <div class="row mt-1">
+            <template v-for="market in getMatchResult">
+              <div
+                  class="col"
+                  v-for="selection in getSelectionsFromMarketId(market.id)"
+                  :key="selection.id"
+              >
+                <div class="card bg-primary text-white h-100">
+                  <div class="card-body">
+                    <p class="card-text">{{ selection.name }} : {{ selection.currentOdd }}</p>
+                  </div>
+                </div>
+              </div>
+            </template>
+          </div>
+          <br/>
+
+          <div v-for="(market, idx) in getOtherMarkets" :key="`${market.id}-${idx}`">
+            <h4>{{ market.name }}</h4>
+            <div class="row mt-1" v-for="selection in getSelectionsFromMarketId(market.id)"
+                 :key="selection.id">
+              <div class="col">
+                <div class="card bg-primary text-white h-100 col">
+                  <div class="card-body">
+                    <p class="card-text">{{ selection.name }} : {{ selection.currentOdd }}</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col">
-              <div class="card bg-primary text-white h-100">
-                <div class="card-body">
-                  <p class="card-text">Nul : 2.1</p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card bg-primary text-white h-100">
-                <div class="card-body">
-                  <p class="card-text">Psg : 1.7</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <br />
-          <h4>Buteur</h4>
-          <div class="row mt-1">
-            <div class="card bg-primary text-white h-100 col">
-              <div class="card-body">D. Neymar : 1.3</div>
-            </div>
-          </div>
-          <div class="row mt-1">
-            <div class="card bg-primary text-white h-100 col">
-              <div class="card-body">K. Mbappe : 1.6</div>
-            </div>
-          </div>
-          <div class="row mt-1">
-            <div class="card bg-primary text-white h-100 col">
-              <div class="card-body">L. Messi : 1.3</div>
-            </div>
-          </div>
-          <div class="row mt-1">
-            <div class="card bg-primary text-white h-100 col">
-              <div class="card-body">K. Benzema : 1.5</div>
-            </div>
-          </div>
-          <div class="row mt-1">
-            <div class="card bg-primary text-white h-100 col">
-              <div class="card-body">E. Hasard : 2.5</div>
-            </div>
-          </div>
-          <div class="row mt-1">
-            <div class="card bg-primary text-white h-100 col">
-              <div class="card-body">J. Vinicius : 1.8</div>
-            </div>
-          </div>
-          <div class="row mt-1">
-            <div class="card bg-primary text-white h-100 col">
-              <div class="card-body">M. Icardi : 1.9</div>
-            </div>
+            <br/>
           </div>
         </div>
       </div>
@@ -79,22 +49,52 @@
 
 <script>
 // @ is an alias to /src
-//import axios from '@/services/axios.js'
+import axios from '@/services/axios.js'
 
 export default {
   name: 'livedetails',
   mounted() {
+    this.loadSelections()
   },
   data() {
     return {
-      //TODO: shoud be retrieved from json
-      //  axios.get('/selections.json')
       selections: [],
     }
   },
   created() {
   },
+  computed: {
+    getEvent() {
+      return this.selections.length > 0 ? this.selections[0].market.event : null;
+    },
+    getMarkets() {
+      if (!this.selections.length) {
+        return []
+      }
+      const markets = this.selections.map((selection) => selection.market)
+      let uniqueMarkets = []
+      markets.forEach((market) => {
+        if (!uniqueMarkets.some(uM => uM.id === market.id)) {
+          uniqueMarkets.push(market)
+        }
+      })
+      return uniqueMarkets
+    },
+    getMatchResult() {
+      return this.getMarkets.filter((market) => market.id === 2)
+    },
+    getOtherMarkets() {
+      return this.getMarkets.filter((market) => market.id !== 2)
+    },
+  },
   methods: {
+    async loadSelections() {
+      const result = await axios.get('/selections.json')
+      this.selections = result.data
+    },
+    getSelectionsFromMarketId(marketId) {
+      return this.selections.filter((selection) => selection.market.id === marketId)
+    },
   },
 }
 </script>
