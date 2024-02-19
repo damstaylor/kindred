@@ -105,6 +105,14 @@ export default {
   color: #42b983;
 }
 
+.vue-logo-back {
+  background-color: black;
+}
+
+.header-logo {
+  /*margin-left: -50%;*/
+}
+
 .centeralign {
   display: block;
   margin-left: auto;

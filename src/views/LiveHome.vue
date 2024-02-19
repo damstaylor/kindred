@@ -74,16 +74,8 @@ export default {
 </script>
 
 <style scoped>
-.header-logo {
-  /*margin-left: -50%;*/
-}
-
 .addmargin {
   margin-top: 10px;
   margin-bottom: 10px;
-}
-
-.vue-logo-back {
-  background-color: black;
 }
 </style>
