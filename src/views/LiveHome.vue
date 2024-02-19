@@ -4,7 +4,7 @@
       <div class="card-header bg-dark text-white pulse">
         <h4>
           Live(s) en cours
-          <span class="badge bg-danger">{{ lives.length }}</span>
+          <span class="badge bg-danger align-middle">{{ lives.length }}</span>
         </h4>
       </div>
       <div class="card-body">
