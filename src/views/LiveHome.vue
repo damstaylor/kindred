@@ -24,7 +24,7 @@
                   {{ live.nbMarkets }} marché(s) ouvert(s)
                 </li>
                 <li class="list-group-item">
-                  {{ live.nbSelections }} selection(s) ouverte(s)
+                  {{ live.nbSelections }} sélection(s) ouverte(s)
                 </li>
                 <li class="list-group-item">
                   {{ live.nbBets }} pari(s) enregistré(s)
