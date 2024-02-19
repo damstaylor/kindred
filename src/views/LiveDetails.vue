@@ -61,8 +61,6 @@ export default {
       selections: [],
     }
   },
-  created() {
-  },
   computed: {
     getEvent() {
       return this.selections.length > 0 ? this.selections[0].market.event : null;
