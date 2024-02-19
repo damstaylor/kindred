@@ -5,7 +5,7 @@
         <div class="centeralign bg-white" style="height: 30px">
           <span class="float-left">
             <a href="/lives">
-              <img src="./assets/logo-unibet.png" alt="Logo Unibet" class="header-logo" />
+              <img src="./assets/logo-unibet.png" alt="Logo Unibet" class="header-logo"/>
             </a>
           </span>
           <div class="text-dark float-right mr-3">
@@ -16,7 +16,7 @@
               Balance : <span class="font-weight-bold">{{ balance }} € </span>
             </div>
           </div>
-          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
               <button
                 class="navbar-toggler"
@@ -34,6 +34,11 @@
                   <li class="nav-item">
                     <router-link tag="a" class="nav-link" to="/lives">
                       En direct
+                    </router-link>
+                  </li>
+                  <li class="nav-item">
+                    <router-link tag="a" class="nav-link" to="/livedetails/1">
+                      Mes paris
                     </router-link>
                   </li>
                 </ul>
@@ -60,7 +65,7 @@ export default {
     this.fetchBalance()
   },
   destroyed() {
-    this.balanceInterval =  null
+    this.balanceInterval = null
   },
   data() {
     return {
@@ -92,9 +97,9 @@ export default {
   color: #2c3e50;
 }
 
-/*#nav {
-  padding: 30px;
-}*/
+.home {
+  height: 100%;
+}
 
 #nav a {
   font-weight: bold;
