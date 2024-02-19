@@ -8,14 +8,14 @@
               <img src="./assets/logo-unibet.png" alt="Logo Unibet" class="header-logo" />
             </a>
           </span>
-          <span class="text-dark float-right mr-3">
+          <div class="text-dark float-right mr-3">
             <div class="text-secondary mr-3">
               Login : <span class="font-weight-bold">{{ username }}</span>
             </div>
             <div class="text-secondary mr-3">
               Balance : <span class="font-weight-bold">{{ balance }} € </span>
             </div>
-          </span>
+          </div>
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
               <button
