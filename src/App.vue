@@ -42,13 +42,18 @@
 
 <script>
 // @ is an alias to /src
-import axios from '@/services/axios.js'
+import fetchJsonData from '@/services/fetchJsonData'
 
 export default {
   name: 'App',
   created() {
-    this.fetchBalance()
     this.balanceInterval = setInterval(this.fetchBalance, 5000)
+  },
+  mounted() {
+    this.fetchBalance()
+  },
+  destroyed() {
+    this.balanceInterval =  null
   },
   data() {
     return {
@@ -58,11 +63,10 @@ export default {
     }
   },
   methods: {
-    fetchBalance() {
-      axios.get('/user.json').then((res) => {
-        this.username = res.data.pseudo
-        this.balance = res.data.balance
-      })
+    async fetchBalance() {
+      const { pseudo, balance } = await fetchJsonData('/user.json')
+      this.username = pseudo
+      this.balance = balance
     },
   },
   beforeDestroy() {

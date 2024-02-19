@@ -49,12 +49,12 @@
 
 <script>
 // @ is an alias to /src
-import axios from '@/services/axios.js'
+import fetchJsonData from '@/services/fetchJsonData'
 
 export default {
   name: 'livedetails',
   mounted() {
-    this.loadSelections()
+    this.fetchSelections()
   },
   data() {
     return {
@@ -88,9 +88,8 @@ export default {
     },
   },
   methods: {
-    async loadSelections() {
-      const result = await axios.get('/selections.json')
-      this.selections = result.data
+    async fetchSelections() {
+      this.selections = await fetchJsonData('/selections.json')
     },
     getSelectionsFromMarketId(marketId) {
       return this.selections.filter((selection) => selection.market.id === marketId)

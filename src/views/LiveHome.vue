@@ -48,16 +48,15 @@
 
 <script>
 // @ is an alias to /src
-import axios from '@/services/axios.js'
+import fetchJsonData from '@/services/fetchJsonData'
 
 export default {
   name: 'live',
   mounted() {
-    this.loadJsonData()
+    this.fetchLives()
   },
   data() {
     return {
-      //TODO: fetch data using axios from local json (in directory public/json/events.json)
       lives: [],
     }
   },
@@ -67,12 +66,8 @@ export default {
     goToLive(id) {
       this.$router.push(`/livedetails/${id}`)
     },
-    loadJsonData() {
-      axios.get('/lives.json').then((res) => {
-        this.lives = res.data
-      }).catch(error => {
-        console.error('Error while fetching data', error) // eslint-disable-line
-      })
+    async fetchLives() {
+      this.lives = await fetchJsonData('/lives.json')
     },
   },
 }
