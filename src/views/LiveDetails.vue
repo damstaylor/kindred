@@ -1,7 +1,7 @@
 <template>
   <div class="card mt-5">
     <div v-if="getEvent" class="card-header bg-dark text-white pulse">
-      {{ getEvent.name }} {{ `${selections[0].state === 'OPENED' ? '(en cours)' : '(terminé)'}` }}
+      {{ getEvent.name }} {{ `${getState === 'OPENED' ? '(en cours)' : '(terminé)'}` }}
     </div>
     <div class="card-body">
       <div class="card-text">
@@ -10,9 +10,9 @@
           <div class="row mt-1">
             <template v-for="market in getMatchResult">
               <div
-                  class="col"
-                  v-for="selection in getSelectionsFromMarketId(market.id)"
-                  :key="selection.id"
+                class="col"
+                v-for="selection in getSelectionsFromMarketId(market.id)"
+                :key="selection.id"
               >
                 <div class="card bg-primary text-white h-100">
                   <div class="card-body">
@@ -63,7 +63,10 @@ export default {
   },
   computed: {
     getEvent() {
-      return this.selections.length > 0 ? this.selections[0].market.event : null;
+      return this.selections.length > 0 ? this.selections[0].market.event : null
+    },
+    getState() {
+      return this.selections.length > 0 ? this.selections[0].state : ''
     },
     getMarkets() {
       if (!this.selections.length) {
