@@ -31,7 +31,7 @@
                 </li>
               </ul>
               <a class="btn btn-primary mt-3" @click="goToLive(live.id)">
-                <span style="color: #212121">
+                <span>
                   Parier sur {{ live.name }}
                 </span>
               </a>
