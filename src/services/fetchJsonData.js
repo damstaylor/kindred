@@ -5,6 +5,6 @@ export default async function fetchJsonData(url) {
     const result = await axios.get(url)
     return result.data
   } catch(err) {
-    console.error(err)
+    console.error(err) // eslint-disable-line
   }
 }
