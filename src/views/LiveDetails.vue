@@ -6,7 +6,7 @@
     <div class="card-body">
       <div class="card-text">
         <div v-if="getMarkets.length" class="container">
-          <div v-for="(market, idx) in getMarkets" :key="`${market.id}-${idx}`">
+          <div v-for="(market, idx) in getMarkets" :key="`${market.id}-${idx}`" class="market">
             <h4>{{ market.name }}</h4>
             <template v-if="getSelectionsFromMarketId(market.id).length <= 3">
               <div class="row mt-1">
@@ -38,7 +38,6 @@
                 </div>
               </div>
             </template>
-            <br />
           </div>
         </div>
       </div>
@@ -94,3 +93,8 @@ export default {
   },
 }
 </script>
+<style scoped>
+.market {
+  margin-bottom: 24px;
+}
+</style>
