@@ -6,35 +6,39 @@
     <div class="card-body">
       <div class="card-text">
         <div v-if="getMarkets.length" class="container">
-          <h4> {{ getMatchResult.name }}</h4>
-          <div class="row mt-1">
-            <div
-              class="col"
-              v-for="selection in getSelectionsFromMarketId(getMatchResult.id)"
-              :key="selection.id"
-            >
-              <div class="card bg-primary text-white h-100">
-                <div class="card-body">
-                  <p class="card-text">{{ selection.name }} : {{ selection.currentOdd }}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <br/>
-
-          <div v-for="(market, idx) in getOtherMarkets" :key="`${market.id}-${idx}`">
+          <div v-for="(market, idx) in getMarkets" :key="`${market.id}-${idx}`">
             <h4>{{ market.name }}</h4>
-            <div class="row mt-1" v-for="selection in getSelectionsFromMarketId(market.id)"
-                 :key="selection.id">
-              <div class="col">
-                <div class="card bg-primary text-white h-100 col">
-                  <div class="card-body">
-                    <p class="card-text">{{ selection.name }} : {{ selection.currentOdd }}</p>
+            <template v-if="getSelectionsFromMarketId(market.id).length <= 3">
+              <div class="row mt-1">
+                <div
+                  class="col"
+                  v-for="selection in getSelectionsFromMarketId(market.id)"
+                  :key="selection.id"
+                >
+                  <div class="card bg-primary text-white h-100">
+                    <div class="card-body">
+                      <p class="card-text">{{ selection.name }} : {{ selection.currentOdd }}</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <br/>
+            </template>
+            <template v-else>
+              <div
+                class="row mt-1"
+                v-for="selection in getSelectionsFromMarketId(market.id)"
+                :key="selection.id"
+              >
+                <div class="col">
+                  <div class="card bg-primary text-white h-100">
+                    <div class="card-body">
+                      <p class="card-text">{{ selection.name }} : {{ selection.currentOdd }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </template>
+            <br />
           </div>
         </div>
       </div>
@@ -78,12 +82,6 @@ export default {
         }
       })
       return uniqueMarkets
-    },
-    getMatchResult() {
-      return this.getMarkets.find((market) => market.id === 2) || null
-    },
-    getOtherMarkets() {
-      return this.getMarkets.filter((market) => market.id !== 2)
     },
   },
   methods: {
