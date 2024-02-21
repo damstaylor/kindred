@@ -4,9 +4,13 @@
       <div class="vue-logo-back">
         <div class="centeralign bg-white" style="height: 30px">
           <span class="float-left">
-            <a href="/lives">
-              <img src="./assets/logo-unibet.png" alt="Logo Unibet" class="header-logo"/>
-            </a>
+            <router-link to="/lives">
+              <img
+                :src="require('./assets/logo-unibet.png')"
+                alt="Logo Unibet"
+                class="header-logo"
+              />
+            </router-link>
           </span>
           <div class="text-dark float-right mr-3">
             <div class="text-secondary mr-3">
