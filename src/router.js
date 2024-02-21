@@ -13,12 +13,12 @@ const router = new Router({
     },
     {
       path: '/lives',
-      name: 'live',
+      name: 'live-home',
       component: LiveHome,
     },
     {
       path: '/livedetails/:id',
-      name: 'livedetails',
+      name: 'live-details',
       component: LiveDetails,
     },
   ],

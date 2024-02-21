@@ -53,7 +53,7 @@
 import fetchJsonData from '@/services/fetchJsonData'
 
 export default {
-  name: 'livedetails',
+  name: 'live-details',
   mounted() {
     this.fetchSelections()
   },
